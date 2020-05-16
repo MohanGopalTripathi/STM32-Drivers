@@ -125,6 +125,9 @@ void GPIO_PeriClkCntrl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
  * @brief             - This function initialize the GPIO
  *
  * @param[in]         -
+ * @param[in]         -
+ * @param[in]         -
+ *
  * @return            -  none
  *
  * @Note              -  none

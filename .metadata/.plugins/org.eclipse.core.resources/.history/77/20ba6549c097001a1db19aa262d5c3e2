@@ -13,11 +13,11 @@
 
 typedef struct
 {
-	uint8_t GPIO_PinNumber;			//@GPIOPinNumber
-	uint8_t GPIO_PinMode;			/* GPIO modes possibilities from @GPIOModes*/
-	uint8_t GPIO_PinSpeed;			/* GPIO modes possibilities from @GPIOSpeed*/
-	uint8_t GPIO_PinOPType;			/* GPIO modes possibilities from @GPIOOutputTypes*/
-	uint8_t GPIO_PinPuPd;			//pull up and pull down @GPIOPullupPulldown
+	uint8_t GPIO_PinNumber;
+	uint8_t GPIO_PinMode;
+	uint8_t GPIO_PinSpeed;
+	uint8_t GPIO_PinOPType;
+	uint8_t GPIO_PinPuPd;			//pull up and pull down
 	uint8_t GPIO_PinAltFnMode;		//alternate functionality
 
 
@@ -38,36 +38,7 @@ typedef struct
 
 }GPIO_Handle_t;
 
-
-
-
 /*
- * @GPIOPinNumber
- * GPIO Pin number possibilities
- */
-
-#define GPIO_PIN_NO_0		0
-#define GPIO_PIN_NO_0		1
-#define GPIO_PIN_NO_0		2
-#define GPIO_PIN_NO_0		3
-#define GPIO_PIN_NO_0		4
-#define GPIO_PIN_NO_0		5
-#define GPIO_PIN_NO_0		6
-#define GPIO_PIN_NO_0		7
-#define GPIO_PIN_NO_0		8
-#define GPIO_PIN_NO_0		9
-#define GPIO_PIN_NO_0		10
-#define GPIO_PIN_NO_0		11
-#define GPIO_PIN_NO_0		12
-#define GPIO_PIN_NO_0		13
-#define GPIO_PIN_NO_0		14
-#define GPIO_PIN_NO_0		15
-
-
-
-
-/*
- * @GPIOModes
  * GPIO Pin Modes possibilities
  */
 
@@ -81,7 +52,6 @@ typedef struct
 
 
 /*
- *@GPIOOutputTypes
  * GPIO output type possibilities
  */
 
@@ -91,7 +61,6 @@ typedef struct
 
 
 /*
- *  @GPIOSpeed
  * GPIO output speed possibilities
  */
 
@@ -99,19 +68,6 @@ typedef struct
 #define GPIO_SPEED_MEDIUM	1
 #define GPIO_SPEED_FAST		2
 #define GPIO_SPEED_HIGH		3
-
-
-/*
- * @GPIOPullupPulldown
- * GPIO pull-up and pull-down possibilities
- */
-
-#define GPIO_NO_PUPD			0
-#define GPIO_PIN_PU				1
-#define GPIO_PIN_PD				2
-
-
-
 
 
 

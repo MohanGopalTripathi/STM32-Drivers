@@ -125,6 +125,9 @@ void GPIO_PeriClkCntrl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
  * @brief             - This function initialize the GPIO
  *
  * @param[in]         -
+ * @param[in]         -
+ * @param[in]         -
+ *
  * @return            -  none
  *
  * @Note              -  none
@@ -133,12 +136,6 @@ void GPIO_PeriClkCntrl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 
 void GPIO_InIt(GPIO_Handle_t *pGPIOHandle)
 {
-	//1. gpio pin mode
-
-	//2. speed
-	//3. pull up pull down
-	//4. output type
-	//5. alt functionality
 
 
 
