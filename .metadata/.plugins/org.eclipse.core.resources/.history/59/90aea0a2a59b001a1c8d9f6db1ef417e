@@ -133,21 +133,7 @@ void GPIO_PeriClkCntrl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 
 void GPIO_InIt(GPIO_Handle_t *pGPIOHandle)
 {
-	uint32_t temp = 0; //temporary register
-
-	//1. configuring GPIO pin mode
-
-	if(pGPIOHandle ->GPIO_PinConfig.GPIO_PinMode <= GPIO_MODE_ANALOG)
-	{
-		//this is non interrupt mode see macro for GPIO Mode anything less than ANalog 0r 3 is non interrupt
-
-	}
-	else
-	{
-		//this is interrupt mode
-
-
-	}
+	//1. gpio pin mode
 
 	//2. speed
 	//3. pull up pull down
