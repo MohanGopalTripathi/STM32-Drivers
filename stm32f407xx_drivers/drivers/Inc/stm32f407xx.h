@@ -229,6 +229,7 @@ typedef struct
 
 #define RCC 				( (RCC_RegDef_t*)RCC_BASE_ADRR)
 #define EXTI 				( (EXTI_RegDef_t*)EXTI_BASE_ADRR)
+#define SYSCFG				( (SYSCFG_RegDef_t*)SYSCFG_BASE_ADRR)
 
 /*
  * Clock enable macros for GPIOx peripherals
@@ -343,6 +344,22 @@ typedef struct
 #define GPIOG_REG_RESET()			do{ ( RCC->APB1RSTR |= (1 << 6) );  ( RCC->APB1RSTR &= ~(1 << 6) ); }while(0)
 #define GPIOH_REG_RESET()			do{ ( RCC->APB1RSTR |= (1 << 7) );  ( RCC->APB1RSTR &= ~(1 << 7) ); }while(0)
 #define GPIOI_REG_RESET()			do{ ( RCC->APB1RSTR |= (1 << 8) );  ( RCC->APB1RSTR &= ~(1 << 8) ); }while(0)
+
+/*
+ * returns port code
+ */
+
+#define GPIO_BASEADDR_TO_CODE(x)		((x == GPIOA) ? 0 :\
+										(x == GPIOB) ? 1 :\
+										(x == GPIOC) ? 2 :\
+										(x == GPIOD) ? 3 :\
+										(x == GPIOE) ? 4 :\
+										(x == GPIOF) ? 5 :\
+										(x == GPIOG) ? 6 :\
+										(x == GPIOH) ? 7 :\
+										(x == GPIOI) ? 8 :0)
+
+
 
 /*
  * Some generic macros
