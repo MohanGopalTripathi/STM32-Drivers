@@ -451,41 +451,6 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 
 void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi)
 {
-	if(EnorDi == ENABLE)
-	{
-		if(IRQNumber <= 31)
-		{
-			//program ISER0 register //ISER  Interrupt Set-Enable Register
-		}
-		else if(IRQNumber > 31 && IRQNumber < 64)
-		{
-			//program ISER1 register
-		}
-		else if(IRQNumber >= 64 && IRQNumber < 96)
-		{
-			//program ISER2 register
-
-		}
-
-	}
-	else
-	{
-		if(IRQNumber <= 31)
-		{
-			//program ICER0 register //ICER  Interrupt Clear-Enable Register
-		}
-		else if(IRQNumber > 31 && IRQNumber < 64)
-		{
-			//program ICER1 register
-		}
-		else if(IRQNumber >= 64 && IRQNumber < 96)
-		{
-			//program ICER2 register
-
-		}
-
-	}
-
 
 }
 
