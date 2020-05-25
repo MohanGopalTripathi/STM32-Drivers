@@ -446,27 +446,24 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 
 
 /*
- * Interrupt configuration
+ * Interrupt configuration and IRQ handler
  */
 
-void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
+void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi)
 {
 	if(EnorDi == ENABLE)
 	{
 		if(IRQNumber <= 31)
 		{
 			//program ISER0 register //ISER  Interrupt Set-Enable Register
-			*NVIC_ISER0 |= (1 << IRQNumber);
 		}
 		else if(IRQNumber > 31 && IRQNumber < 64)
 		{
 			//program ISER1 register
-			*NVIC_ISER1 |= (1 << (IRQNumber % 32));
 		}
 		else if(IRQNumber >= 64 && IRQNumber < 96)
 		{
 			//program ISER2 register
-			*NVIC_ISER2 |= (1 << (IRQNumber % 64));
 
 		}
 
@@ -476,17 +473,14 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 		if(IRQNumber <= 31)
 		{
 			//program ICER0 register //ICER  Interrupt Clear-Enable Register
-			*NVIC_ICER0 |= (1 << IRQNumber);
 		}
 		else if(IRQNumber > 31 && IRQNumber < 64)
 		{
 			//program ICER1 register
-			*NVIC_ICER1 |= (1 << (IRQNumber % 32));
 		}
 		else if(IRQNumber >= 64 && IRQNumber < 96)
 		{
 			//program ICER2 register
-			*NVIC_ICER2 |= (1 << (IRQNumber % 64));
 
 		}
 
@@ -496,33 +490,6 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 }
 
 
-/*
- *  Priority Configuration
- */
-
-void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority)
-{
-	//1. find out IPR register
-	uint8_t iprx = IRQNumber / 4;
-	uint8_t iprx_section = IRQNumber % 4 ;
-
-	uint8_t shift_amount = (8 * iprx_section) + (8 - NO_PR_BITS_IMPLEMENTED);
-	*(NVIC_PR_BASE_ADDR + ( iprx * 4) ) |= IRQPriority << shift_amount ;
-
-
-}
-
-
-
-
-
-
-
-
-
-/*
- *  IRQ handler
- */
 void GPIO_IRQHandler(uint8_t PinNumber)
 {
 

@@ -34,14 +34,10 @@
 #define NVIC_ISER2				((__vo uint32_t *)0xE000E188)
 #define NVIC_ISER3				((__vo uint32_t *)0xE000E18C)
 
-/*
- * ARM Cortex Mx processor NVIC priority register addresses
- */
-
-#define NVIC_PR_BASE_ADDR			((__vo uint32_t *)0xE000E400)
 
 
-#define NO_PR_BITS_IMPLEMENTED				4
+
+
 /*
  * base addresses of flash and SRAM
  */
