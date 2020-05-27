@@ -1,20 +1,10 @@
-22:34:22 **** Incremental Build of configuration Debug for project stm32f407xx_drivers ****
+00:30:33 **** Incremental Build of configuration Debug for project stm32f407xx_drivers ****
 make -j4 all 
-arm-none-eabi-gcc "../drivers/Src/stm32f407_gpio_drivers.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I../Inc -I"E:/stm32Workspace/stm32f407Drivers/stm32f407xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/Src/stm32f407_gpio_drivers.d" -MT"drivers/Src/stm32f407_gpio_drivers.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/stm32f407_gpio_drivers.o"
-arm-none-eabi-gcc -o "stm32f407xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\stm32Workspace\stm32f407Drivers\stm32f407xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f407xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: stm32f407xx_drivers.elf
- 
 arm-none-eabi-size   stm32f407xx_drivers.elf 
-arm-none-eabi-objdump -h -S  stm32f407xx_drivers.elf  > "stm32f407xx_drivers.list"
-arm-none-eabi-objcopy  -O binary  stm32f407xx_drivers.elf  "stm32f407xx_drivers.bin"
    text	   data	    bss	    dec	    hex	filename
-   2260	      8	   1568	   3836	    efc	stm32f407xx_drivers.elf
+   2616	      8	   1568	   4192	   1060	stm32f407xx_drivers.elf
 Finished building: default.size.stdout
  
-Finished building: stm32f407xx_drivers.bin
-Finished building: stm32f407xx_drivers.list
- 
- 
 
-22:34:24 Build Finished. 0 errors, 0 warnings. (took 2s.89ms)
+00:30:33 Build Finished. 0 errors, 0 warnings. (took 467ms)
 
